@@ -31,7 +31,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/class', [StudentController::class, 'Index'])->name('student.class');
 Route::get('/create/class', [StudentController::class, 'CreateClass'])->name('create.class');
 Route::post('/store/class', [StudentController::class, 'StoreClass'])->name('class.store');
-Route::delete('/delete/class', [StudentController::class, 'DeleteClass'])->name('class.delete');
+Route::get('/edit/class/{class}', [StudentController::class, 'EditClass'])->name('class.edit');
+Route::delete('/delete/class/{class}', [StudentController::class, 'DeleteClass'])->name('class.delete');
  
 
 

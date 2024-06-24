@@ -31,16 +31,20 @@ defineProps({
           <tr>
             <th scope="col" class="px-6 py-3">ID</th>
             <th scope="col" class="px-6 py-3">Class Name</th>
-            <!-- <th scope="col" class="px-6 py-3">Delete</th> -->
+            <th scope="col" class="px-6 py-3">Edit</th>
+            <th scope="col" class="px-6 py-3">Delete</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="data in student_class" :key="data.id" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ data.id }}</th>
             <td class="px-6 py-4">{{ data.class_name }}</td>
-            <!-- <td class="px-6 py-4">
+            <td class="px-6 py-4">
+              <Link :href="route('class.edit', data.id)" method="" as="button" type="button" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+             </td>
+            <td class="px-6 py-4">
               <Link :href="route('class.delete', data.id)" method="delete" as="button" type="button" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</Link>
-             </td> -->
+             </td>
           </tr>
         </tbody>
       </table>

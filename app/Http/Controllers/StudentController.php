@@ -29,7 +29,11 @@ class StudentController extends Controller
         StudentClass::create([
             'class_name' => $request->class_name,
         ]);
-        return Redirect::route('student.class')->with('success', 'Skill created successfully');
+        return Redirect::route('student.class')->with('success', 'Class created successfully');
+    }
+
+    public function EditClass(){
+        return Inertia::render('Class/Edit');
     }
 
     // public function DeleteClass(){
